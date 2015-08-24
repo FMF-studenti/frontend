@@ -1,7 +1,7 @@
 {{outlet}}
 
 <ul>
-  {{#each author in model}}
-    <li>Hello, {{author.name}}!</li>
+  {{#each model as |author|}}
+    <li>{{author.name}}</li>
   {{/each}}
 </ul>

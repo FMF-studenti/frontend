@@ -1,3 +1,15 @@
-<h2 id="title">Welcome to Ember</h2>
+{{#nav-main}}{{/nav-main}}
 
-{{outlet}}
+<div class="ui main text container">
+  {{outlet}}
+</div>
+
+<div class="ui footer">
+  <div class="ui center aligned container">
+    <div class="ui divider"></div>
+    <div class="ui horizontal small divided link list">
+      <span class="item">© 2015 {{#link-to 'index' activeClass=""}}{{fmf-constant 'name'}}{{/link-to}}</span>
+      {{#link-to 'authors' class="item" activeClass=""}}Avtorji{{/link-to}}
+    </div>
+  </div>
+</div>

@@ -12,10 +12,32 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    dotEnv: {
+      clientAllowedKeys: ['AUTH_REDIRECT', 'AUTH_CLIENT', 'AUTH_KEY', 'BACKEND_URI']
+    },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      authKey: process.env.AUTH_KEY,
+      backendUri: process.env.BACKEND_URI
+    }
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
+  }
+
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: process.env.BACKEND_URI + 'auth/token/',
+    serverTokenRevocationEndpoint: process.env.BACKEND_URI + 'auth/revoke_token/'
+  };
+
+  ENV.torii = {
+    providers: {
+      'fmf-oauth2': {
+        'apiKey': process.env.AUTH_CLIENT,
+        'baseUri': process.env.BACKEND_URI + 'auth/authorize/',
+        'redirectUri': process.env.AUTH_REDIRECT
+      }
     }
   };
 
@@ -25,13 +47,16 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
     ENV.contentSecurityPolicy = {
-      'connect-src': "'self' localhost:8000",
+      'connect-src': "'self' " + process.env.BACKEND_URI,
       'font-src': "'self' https://fonts.gstatic.com data:",
       'img-src': "'self' data:",
-      'script-src': "'self' 'unsafe-inline'",
+      'script-src': "'self' 'unsafe-inline' http://ember-extension.s3.amazonaws.com",
       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com"
     }
+
+    ENV['simple-auth']['crossOriginWhitelist'] = [process.env.BACKEND_URI];
   }
 
   if (environment === 'test') {

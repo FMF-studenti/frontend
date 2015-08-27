@@ -27,15 +27,15 @@ module.exports = function(environment) {
   }
 
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: process.env.BACKEND_URI + 'auth/token/',
-    serverTokenRevocationEndpoint: process.env.BACKEND_URI + 'auth/revoke_token/'
+    serverTokenEndpoint: process.env.BACKEND_URI + '/auth/token/',
+    serverTokenRevocationEndpoint: process.env.BACKEND_URI + '/auth/revoke_token/'
   };
 
   ENV.torii = {
     providers: {
       'fmf-oauth2': {
         'apiKey': process.env.AUTH_CLIENT,
-        'baseUri': process.env.BACKEND_URI + 'auth/authorize/',
+        'baseUri': process.env.BACKEND_URI + '/auth/authorize/',
         'redirectUri': process.env.AUTH_REDIRECT
       }
     }

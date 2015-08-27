@@ -2,10 +2,12 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  first_name: DS.attr(),
-  last_name: DS.attr(),
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+  contribution: DS.attr('string'),
+  active: DS.attr('boolean'),
 
-  name: Ember.computed('first_name', 'last_name', function() {
-    return this.get('first_name') + ' ' + this.get('last_name');
+  name: Ember.computed('firstName', 'lastName', function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
   })
 });

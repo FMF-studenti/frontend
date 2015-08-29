@@ -1,0 +1,9 @@
+{{outlet}}
+
+<ul>
+  {{#each model as |quote|}}
+    <li>{{quote.author}}: {{quote.content}}</li>
+  {{/each}}
+</ul>
+
+{{infinity-loader infinityModel=model}}

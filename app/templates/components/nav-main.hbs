@@ -6,7 +6,9 @@
     <a class="item" href="http://forum.fmf.si">Forum</a>
     <a class="item" href="http://revija.fmf.si">Revija</a>
     <a class="item">Zapiski</a>
-    <a class="item">Izjave</a>
+    {{#link-to 'izjave' class="item"}}
+      Izjave
+    {{/link-to}}
     <div class="ui dropdown link item" tabindex="-1">
       <span class="text">FMF</span>
       <i class="dropdown icon" tabindex="0"><div class="menu"></div></i>

@@ -41,6 +41,7 @@
     "ember-data": "1.13.8",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
+    "ember-infinity": "^0.1.1",
     "semantic-ui-ember": "git://github.com/semantic-org/Semantic-UI-Ember.git#5e7fd4a52612722bc78ef2c4bc2de42367b7a4f1"
   }
 }

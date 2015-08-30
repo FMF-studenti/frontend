@@ -1,6 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['ui', 'primary', 'fixed', 'inverted', 'borderless', 'main', 'menu'],
+  prepareSidebar: function() {
+    Ember.$('body').prepend(this.$());
+    Ember.$('.ui.sidebar').sidebar({
+      transition: 'overlay'
+    }).sidebar('attach events', '.hamburger.item');
+  }.on('didInsertElement'),
   prepareDropdowns: function() {
     this.$().find('.dropdown').dropdown({
       on: 'hover',

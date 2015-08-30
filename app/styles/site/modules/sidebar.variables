@@ -1,0 +1,6 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@dimmerLayer: 100;
+@canvasBackground: @pageBackground;

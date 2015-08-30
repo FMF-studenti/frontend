@@ -1,7 +1,28 @@
-{{outlet}}
+{{common/main-header title="Avtorji strani" subtitle="Študenti, ki so zaslužni za te študentske strani"}}
 
-<ul>
-  {{#each model as |author|}}
-    <li>{{author.name}}</li>
-  {{/each}}
-</ul>
+{{#common/main-container}}
+  <h2 class="ui header">Trenutno aktivni</h2>
+  <div class="ui list">
+    {{#each model as |author|}}
+    {{#if author.active }}
+    <div class="item">
+        <div class="header">{{author.name}}</div>
+        {{author.contribution}}
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+
+  <h2 class="ui header">Pretekli avtorji</h2>
+  <div class="ui list">
+    {{#each model as |author|}}
+    {{#unless author.active }}
+    <div class="item">
+        <div class="header">{{author.name}}</div>
+        {{author.contribution}}
+    </div>
+    {{/unless}}
+    {{/each}}
+  </div>
+
+{{/common/main-container}}

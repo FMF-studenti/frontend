@@ -1,5 +1,7 @@
-<div class="ui fixed menu">
   <div class="ui container">
+    <a class="hamburger item">
+      <i class="sidebar icon"></i>
+    </a>
     {{#link-to 'index' class="header item" activeClass=""}}
       {{fmf-constant 'name'}}
     {{/link-to}}
@@ -13,12 +15,11 @@
       <span class="text">FMF</span>
       <i class="dropdown icon" tabindex="0"><div class="menu"></div></i>
       <div class="menu" tabindex="-1">
-        <a class="item" href="http://svet.fmf.si" target="_blank">Študentski svet</a>
-        <div class="divider"></div>
         <a class="item" href="http://fmf.uni-lj.si" target="_blank">Uradna stran FMF</a>
         <a class="item" href="https://vis.fmf.uni-lj.si" target="_blank">VIS</a>
         <a class="item" href="http://ucilnica.fmf.uni-lj.si" target="_blank">Spletna učilnica</a>
         <a class="item" href="http://predmeti.fmf.uni-lj.si" target="_blank">Predmeti</a>
+        <a class="item" href="http://svet.fmf.si" target="_blank">Študentski svet</a>
       </div>
     </div>
     <div class="right borderless menu">
@@ -45,4 +46,3 @@
     {{/if}}
     </div>
   </div>
-</div>

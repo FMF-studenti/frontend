@@ -1,9 +1,24 @@
-{{outlet}}
+{{common/main-header title="Izjave"}}
 
-<ul>
-  {{#each model as |quote|}}
-    <li>{{quote.author}}: {{quote.content}}</li>
-  {{/each}}
-</ul>
+{{#common/main-container}}
 
-{{infinity-loader infinityModel=model}}
+  {{outlet}}
+
+  <div class="ui items">
+    {{#each model as |quote|}}
+    <div class="item">
+      <div class="content">
+        <div class="description">
+          <p>{{quote.content}}</p>
+        </div>
+        <div class="meta">
+          <span class="author">{{quote.author}}</span>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  {{infinity-loader infinityModel=model developmentMode=true}}
+
+{{/common/main-container}}

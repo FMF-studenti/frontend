@@ -1,0 +1,16 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.header .main {
+	height: unit(@headerSizeAbsolute * 3 / 5, px);
+	font-size: @huge;
+	font-weight: normal;
+	display: table-cell;
+	vertical-align: middle;
+
+	.ui.header {
+		color: @primaryColor;
+		margin-bottom: 0;
+	}
+}

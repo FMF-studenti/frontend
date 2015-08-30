@@ -1,0 +1,22 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+/* Inverted */
+.ui.inverted.link.list .item,
+.ui.inverted.link.list a.item,
+.ui.inverted.link.list .item a:not(.ui) {
+  color: @invertedLinkListItemColor !important;
+}
+.ui.inverted.link.list a.item:hover,
+.ui.inverted.link.list .item a:not(.ui):hover {
+  color: @invertedLinkListItemHoverColor !important;
+}
+.ui.inverted.link.list a.item:active,
+.ui.inverted.link.list .item a:not(.ui):active {
+  color: @invertedLinkListItemDownColor !important;
+}
+.ui.inverted.link.list a.active.item,
+.ui.inverted.link.list .active.item a:not(.ui) {
+  color: @invertedLinkListItemActiveColor !important;
+}

@@ -1,0 +1,19 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+/* Custom */
+.segment.header {
+	min-height: @relativeHeaderSize;
+	padding-top: @relativeHeaderSize / 5 + (@relativeSmall * 2) + 1em;
+	padding-bottom: @relativeHeaderSize / 5;
+	background-color: #fff;
+	border-bottom: 1px solid @lightGrey;
+}
+
+.ui.vertical.segment.footer {
+  width: 100%;
+  padding: @relativeMini @relativeMini;
+  border-top: 1px solid @lightGrey;
+  background-color: #fff;
+}

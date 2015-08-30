@@ -1,0 +1,53 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.menu .primary.active.item,
+.ui.primary.menu .active.item {
+  border-color: @primaryColor !important;
+  color: @primaryColor !important;
+}
+
+.ui.inverted.menu .active.item {
+  background: @invertedActiveBackground;
+  color: @invertedActiveColor !important;
+}
+
+.ui.inverted.primary.menu {
+  background-color: @primaryColor;
+}
+.ui.inverted.primary.menu .item:before {
+  background-color: @invertedColoredDividerBackground;
+}
+.ui.inverted.primary.menu .active.item {
+  background-color: @invertedColoredActiveBackground !important;
+}
+
+/* Custom */
+.main.menu .item.header {
+	font-size: @relativeLarge;
+}
+
+.main.menu .item:not(.header) {
+	text-transform:uppercase;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.menu {
+    .hamburger.item {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.menu .ui.container {
+    > .item:not(.hamburger):not(.header) {
+      display: none;
+    }
+
+    .hamburger.item .icon {
+      margin:0;
+    }
+  }
+}

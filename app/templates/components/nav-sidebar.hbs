@@ -15,10 +15,8 @@
   <div class="item">
     <div class="header">FMF</div>
     <div class="menu">
-      <a class="item" href="http://fmf.uni-lj.si" target="_blank">Uradna stran FMF</a>
-      <a class="item" href="https://vis.fmf.uni-lj.si" target="_blank">VIS</a>
-      <a class="item" href="http://ucilnica.fmf.uni-lj.si" target="_blank">Spletna učilnica</a>
-      <a class="item" href="http://predmeti.fmf.uni-lj.si" target="_blank">Predmeti</a>
-      <a class="item" href="http://svet.fmf.si" target="_blank">Študentski svet</a>
+    {{#each links as |link|}}
+      <a class="item" href="{{link.url}}" target="_blank">{{link.title}}</a>
+    {{/each}}
     </div>
   </div>

@@ -8,6 +8,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
     return hasTokens ? tokens.reverse().join(' - ') + ' - ' + base : base;
   },
+
+  model: function() {
+    return this.store.findAll('externalLink');
+  },
+
   actions: {
     authenticate: function(provider){
       this.get('session').authenticate('authenticator:torii-oauth2', {

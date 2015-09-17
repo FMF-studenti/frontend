@@ -1,10 +1,9 @@
 import Ember from 'ember';
-import InfinityRoute from "ember-infinity/mixins/route";
+import InfinityRoute from 'ember-infinity/mixins/route';
+import InfinityExtra from 'fmf/mixins/infinity-extra';
 
-export default Ember.Route.extend(InfinityRoute, {
+export default Ember.Route.extend(InfinityRoute, InfinityExtra, {
   titleToken: 'Izjave',
-  perPageParam: 'page_size',        // instead of "per_page"
-  totalPagesParam: "meta.total",    // instead of "meta.total_pages"
   model() {
     return this.infinityModel('quote', { perPage: 12, startingPage: 1 });
   }

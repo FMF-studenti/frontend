@@ -1,18 +1,14 @@
-{{common/main-header title="Izjave"}}
-
-{{#common/main-container}}
-
-  {{outlet}}
-
+  {{notes-filter model=filters action="filtersChanged"}}
+  
   <div class="ui items">
-    {{#each model as |quote|}}
+    {{#each model as |note|}}
     <div class="item">
       <div class="content">
         <div class="description">
-          <p>{{quote.content}}</p>
+          <p>{{note.description}}</p>
         </div>
         <div class="meta">
-          <span class="author">{{quote.author}}</span>
+          <span class="author">{{note.author}}</span>
         </div>
       </div>
     </div>
@@ -20,5 +16,3 @@
   </div>
 
   {{infinity-loader infinityModel=model}}
-
-{{/common/main-container}}

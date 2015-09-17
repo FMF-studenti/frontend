@@ -5,7 +5,9 @@
     <div class="menu">
       <a class="item" href="http://forum.fmf.si">Forum</a>
       <a class="item" href="http://revija.fmf.si">Revija</a>
-      <a class="item">Zapiski</a>
+      {{#link-to 'zapiski' class="item"}}
+        Zapiski
+      {{/link-to}}
       {{#link-to 'izjave' class="item"}}
         Izjave
       {{/link-to}}

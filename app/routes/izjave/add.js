@@ -2,19 +2,19 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  setupController(controller) {
+  setupController: function(controller) {
     Ember.run.scheduleOnce('afterRender', function() {
       Ember.$('#quote-add').form({
         fields: {
-          author   : 'empty',
-          content  : 'empty'
+          author: 'empty',
+          content: 'empty'
         }
       });
     });
   },
 
   actions: {
-    addQuote() {
+    addQuote: function() {
       var store = this.get('store');
       var quote = store.createRecord('quote', {
         author: this.get('controller.author'),
@@ -22,6 +22,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       });
 
       var controller = this.get('controller');
+
       function transitionTo(quote) {
         controller.set('author', null);
         controller.set('content', null);

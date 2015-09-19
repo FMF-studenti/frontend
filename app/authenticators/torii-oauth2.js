@@ -9,10 +9,10 @@ export default OAuth2.extend({
 
   makeRequest: function(url, data) {
     return Ember.$.ajax({
-      url:         url,
-      type:        'POST',
-      data:        data,
-      dataType:    'json',
+      url: url,
+      type: 'POST',
+      data: data,
+      dataType: 'json',
       contentType: 'application/x-www-form-urlencoded',
       beforeSend: function(request) {
         request.setRequestHeader("Authorization", "Basic " + ENV.APP.authKey);
@@ -27,7 +27,9 @@ export default OAuth2.extend({
         Ember.run(function() {
           var expiresAt = _this.absolutizeExpirationTime(response.expires_in);
           _this.scheduleAccessTokenRefresh(response.expires_in, expiresAt, response.refresh_token);
-          resolve(Ember.$.extend(response, { expires_at: expiresAt }));
+          resolve(Ember.$.extend(response, {
+            expires_at: expiresAt
+          }));
         });
       }, function(xhr) {
         Ember.run(function() {

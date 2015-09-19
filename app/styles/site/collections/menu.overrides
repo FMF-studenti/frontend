@@ -16,20 +16,24 @@
 .ui.inverted.primary.menu {
   background-color: @primaryColor;
 }
+
 .ui.inverted.primary.menu .item:before {
   background-color: @invertedColoredDividerBackground;
 }
+
 .ui.inverted.primary.menu .active.item {
   background-color: @invertedColoredActiveBackground !important;
 }
 
+
 /* Custom */
+
 .main.menu .item.header {
-	font-size: @relativeLarge;
+  font-size: @relativeLarge;
 }
 
 .main.menu .item:not(.header) {
-	text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -45,9 +49,8 @@
     > .item:not(.hamburger):not(.header) {
       display: none;
     }
-
     .hamburger.item .icon {
-      margin:0;
+      margin: 0;
     }
   }
 }

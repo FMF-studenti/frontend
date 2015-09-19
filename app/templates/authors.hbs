@@ -4,24 +4,24 @@
   <h2 class="ui header">Trenutno aktivni</h2>
   <div class="ui list">
     {{#each model as |author|}}
-    {{#if author.active }}
-    <div class="item">
-        <div class="header">{{author.name}}</div>
-        {{author.contribution}}
-    </div>
-    {{/if}}
+      {{#if author.active }}
+        <div class="item">
+          <div class="header">{{author.name}}</div>
+          {{author.contribution}}
+        </div>
+      {{/if}}
     {{/each}}
   </div>
 
   <h2 class="ui header">Pretekli avtorji</h2>
   <div class="ui list">
     {{#each model as |author|}}
-    {{#unless author.active }}
-    <div class="item">
-        <div class="header">{{author.name}}</div>
-        {{author.contribution}}
-    </div>
-    {{/unless}}
+      {{#unless author.active }}
+        <div class="item">
+          <div class="header">{{author.name}}</div>
+          {{author.contribution}}
+        </div>
+      {{/unless}}
     {{/each}}
   </div>
 

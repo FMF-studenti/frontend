@@ -1,7 +1,9 @@
+<div>
   {{notes-filter model=filters action="filtersChanged"}}
-  
-  <div class="ui items">
-    {{#each model as |note|}}
+</div>
+
+<div class="ui items">
+  {{#each model as |note|}}
     <div class="item">
       <div class="content">
         <div class="description">
@@ -12,7 +14,7 @@
         </div>
       </div>
     </div>
-    {{/each}}
-  </div>
+  {{/each}}
+</div>
 
-  {{infinity-loader infinityModel=model}}
+{{infinity-loader infinityModel=model}}

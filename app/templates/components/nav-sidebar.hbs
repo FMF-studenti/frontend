@@ -1,24 +1,24 @@
-  <div class="item">
-    {{#link-to 'index' class="header" activeClass=""}}
-      {{fmf-constant 'name'}}
+<div class="item">
+  {{#link-to 'index' class="header" activeClass="" }}
+    {{fmf-constant 'name'}}
+  {{/link-to}}
+  <div class="menu">
+    <a class="item" href="http://forum.fmf.si">Forum</a>
+    <a class="item" href="http://revija.fmf.si">Revija</a>
+    {{#link-to 'zapiski' class="item" }}
+      Zapiski
     {{/link-to}}
-    <div class="menu">
-      <a class="item" href="http://forum.fmf.si">Forum</a>
-      <a class="item" href="http://revija.fmf.si">Revija</a>
-      {{#link-to 'zapiski' class="item"}}
-        Zapiski
-      {{/link-to}}
-      {{#link-to 'izjave' class="item"}}
-        Izjave
-      {{/link-to}}
-    </div>
+    {{#link-to 'izjave' class="item" }}
+      Izjave
+    {{/link-to}}
   </div>
+</div>
 
-  <div class="item">
-    <div class="header">FMF</div>
-    <div class="menu">
+<div class="item">
+  <div class="header">FMF</div>
+  <div class="menu">
     {{#each links as |link|}}
       <a class="item" href="{{link.url}}" target="_blank">{{link.title}}</a>
     {{/each}}
-    </div>
   </div>
+</div>

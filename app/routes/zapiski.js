@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
+  model: function() {
     return Ember.RSVP.hash({
       departments: this.store.findAll('department'),
       levels: this.store.findAll('level'),

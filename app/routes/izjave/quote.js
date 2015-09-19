@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
+  model: function(params) {
     return this.store.findRecord('quote', params.quote_id);
   },
 
   actions: {
-    deleteQuote() {
+    deleteQuote: function() {
       var controller = this.get('controller');
+
       function transitionTo() {
         controller.transitionToRoute('izjave');
       }

@@ -2,14 +2,18 @@
      User Global Variables
 *******************************/
 
+
 /* Colors */
+
 @pageBackgroundMain : #f7f7f7;
 
 /* Sizes */
+
 @headerSizeAbsolute : 150;
-@headerSize         : (@headerSizeAbsolute / 14);
+@headerSize : (@headerSizeAbsolute / 14);
 @relativeHeaderSize : unit( round(@headerSize * @emSize) / @emSize, em);
 
 /* Font */
+
 @imagePath : 'themes/default/assets/images';
-@fontPath  : 'themes/default/assets/fonts';
+@fontPath : 'themes/default/assets/fonts';

@@ -3,26 +3,26 @@
 *******************************/
 
 .main.container-holder {
-	background: @pageBackgroundMain;
+  background: @pageBackgroundMain;
 }
 
 .main.text.container {
-	min-height: 100%;
-    background-color: #fff;
-    border-left: 1px solid @lightGrey;
-    border-right: 1px solid @lightGrey;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-    padding: 2em;
+  min-height: 100%;
+  background-color: #fff;
+  border-left: 1px solid @lightGrey;
+  border-right: 1px solid @lightGrey;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  padding: 2em;
 }
 
 .header.text.container {
-    padding: 0 2em;
+  padding: 0 2em;
 }
 
 .main.container {
-	h2 {
-		margin: 2em 0rem 1rem;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-		padding-bottom: 0.25em;
-	}
+  h2 {
+    margin: 2em 0rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 0.25em;
+  }
 }

@@ -1,7 +1,6 @@
 {{#if session.isAuthenticated}}
-  {{#link-to 'izjave.add' class="ui primary labeled icon button" activeClass=""}}
-    <i class="plus icon"></i>
-    Vnesi novo izjavo
+  {{#link-to 'izjave.add' class="ui primary labeled icon button" activeClass="" }}
+    <i class="plus icon"></i> Vnesi novo izjavo
   {{/link-to}}
 {{else}}
   <i>Za vnos nove izjave se je potrebno prijaviti.</i>
@@ -9,30 +8,30 @@
 
 <div class="ui items">
   {{#each model as |quote|}}
-  <blockquote class="item">
-    <div class="content">
-      <div class="buttons">
-        <p>
-          {{#link-to 'izjave.quote' quote class="ui primary icon button" activeClass=""}}
-            <i class="linkify icon"></i>
-          {{/link-to}}
-        </p>
-        {{#if session.isAuthenticated}}
-        <p>
-          <button class="ui primary icon button">
-            <i class="warning circle icon"></i>
-          </button>
-        </p>
-        {{/if}}
+    <blockquote class="item">
+      <div class="content">
+        <div class="buttons">
+          <p>
+            {{#link-to 'izjave.quote' quote class="ui primary icon button" activeClass="" }}
+              <i class="linkify icon"></i>
+            {{/link-to}}
+          </p>
+          {{#if session.isAuthenticated}}
+            <p>
+              <button class="ui primary icon button">
+                <i class="warning circle icon"></i>
+              </button>
+            </p>
+          {{/if}}
+        </div>
+        <div class="description">
+          <p>{{quote.content}}</p>
+        </div>
+        <div class="meta">
+          <cite>{{quote.author}}</cite>
+        </div>
       </div>
-      <div class="description">
-        <p>{{quote.content}}</p>
-      </div>
-      <div class="meta">
-        <cite>{{quote.author}}</cite>
-      </div>
-    </div>
-  </blockquote>
+    </blockquote>
   {{/each}}
 </div>
 

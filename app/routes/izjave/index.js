@@ -4,7 +4,10 @@ import InfinityExtra from 'fmf/mixins/infinity-extra';
 
 export default Ember.Route.extend(InfinityRoute, InfinityExtra, {
   titleToken: 'Izjave',
-  model() {
-    return this.infinityModel('quote', { perPage: 12, startingPage: 1 });
+  model: function() {
+    return this.infinityModel('quote', {
+      perPage: 12,
+      startingPage: 1
+    });
   }
 });

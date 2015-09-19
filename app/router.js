@@ -7,7 +7,15 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('authors');
-  this.route('izjave');
+  this.route('izjave', function() {
+    this.route('add');
+    this.route('quote', {
+      path: ':quote_id'
+    });
+    this.route('edit', {
+      path: ':quote_id/edit'
+    });
+  });
   this.route('zapiski', function() {
     this.route('list');
     this.route('register');

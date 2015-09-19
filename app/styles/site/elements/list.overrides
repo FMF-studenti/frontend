@@ -1,5 +1,5 @@
 /*******************************
-    User Variable Overrides
+         Site Overrides
 *******************************/
 
 /* Inverted */
@@ -19,4 +19,38 @@
 .ui.inverted.link.list a.active.item,
 .ui.inverted.link.list .active.item a:not(.ui) {
   color: @invertedLinkListItemActiveColor !important;
+}
+
+
+/* Quotes */
+.ui.items > blockquote.item > .content {
+	padding: 0 0 0 20px;
+	border-left: 5px solid @midWhite;
+
+  .description {
+    font-size: @big;
+  }
+
+  .meta {
+    font-style: italic;
+
+    cite::before {
+      content:'\2014 \00A0';
+    }
+  }
+
+  .buttons {
+    float: right;
+    text-align: right;
+  }
+}
+
+.ui.items > blockquote.item.large > .content {
+  .description {
+    font-size: @huge;
+  }
+
+  .meta {
+    font-size: @big;
+  }
 }

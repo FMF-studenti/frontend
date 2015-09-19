@@ -1,0 +1,32 @@
+<h2 class="ui header">Izbrana modrost</h2>
+<div class="ui items">
+  <blockquote class="item large">
+    <div class="content">
+      <div class="buttons">
+        {{#if session.isAuthenticated}}
+        <p>
+          <button class="ui primary icon button">
+            <i class="warning circle icon"></i>
+          </button>
+        </p>
+        {{#if session.currentUser.administrator }}
+        <p>
+          {{#link-to 'izjave.edit' model class="ui primary icon button" activeClass=""}}
+            <i class="edit icon"></i>
+          {{/link-to}}
+          <button class="ui red icon button" {{action "deleteQuote" on="click"}}>
+            <i class="delete icon"></i>
+          </button>
+        </p>
+        {{/if}}
+        {{/if}}
+      </div>
+      <div class="description">
+        <p>{{model.content}}</p>
+      </div>
+      <div class="meta">
+        <cite>{{model.author}}</cite>
+      </div>
+    </div>
+  </blockquote>
+</div>

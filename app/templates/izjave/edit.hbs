@@ -1,0 +1,27 @@
+<h2 class="ui header">Uredi izjavo</h2>
+{{#if session.currentUser.administrator }}
+  <form id="quote-edit" class="ui form" {{action "updateQuote" on="submit"}}>
+    <div class="field">
+      <label>Avtor modrosti</label>
+      {{input type="text" value=model.author name="author"}}
+    </div>
+    <div class="field">
+      <label>Vsebina</label>
+      {{textarea value=model.content name="content"}}
+    </div>
+    <button class="ui primary labeled icon button" type="submit">
+      <i class="save icon"></i>
+      Shrani
+    </button>
+    {{#link-to 'izjave.quote' model class="ui button" activeClass=""}}
+      Nazaj
+    {{/link-to}}
+  </form>
+{{else}}
+  <p>Urejanje je dovoljeno samo administratorjem.</p>
+  <p>
+    {{#link-to 'izjave.quote' model class="ui button" activeClass=""}}
+      Nazaj
+    {{/link-to}}
+  </p>
+{{/if}}

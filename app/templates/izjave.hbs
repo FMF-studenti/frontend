@@ -4,21 +4,4 @@
 
   {{outlet}}
 
-  <div class="ui items">
-    {{#each model as |quote|}}
-    <div class="item">
-      <div class="content">
-        <div class="description">
-          <p>{{quote.content}}</p>
-        </div>
-        <div class="meta">
-          <span class="author">{{quote.author}}</span>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-
-  {{infinity-loader infinityModel=model}}
-
 {{/common/main-container}}

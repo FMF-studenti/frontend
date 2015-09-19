@@ -1,0 +1,18 @@
+<h2 class="ui header">Dodaj izjavo</h2>
+<form id="quote-add" class="ui form" {{action "addQuote" on="submit"}}>
+  <div class="field">
+    <label>Avtor modrosti</label>
+    {{input type="text" value=author name="author"}}
+  </div>
+  <div class="field">
+    <label>Vsebina</label>
+    {{textarea value=content name="content"}}
+  </div>
+  <button class="ui primary labeled icon button" type="submit">
+    <i class="plus icon"></i>
+    Dodaj
+  </button>
+  {{#link-to 'izjave' class="ui button" activeClass=""}}
+    Nazaj
+  {{/link-to}}
+</form>

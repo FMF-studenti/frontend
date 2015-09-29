@@ -26,7 +26,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         controller.transitionToRoute('izjave.quote', item);
       }
 
-      function failure(reason) {
+      function failure() {
         // handle the error
       }
 

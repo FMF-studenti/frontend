@@ -2,7 +2,7 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  setupController: function(controller) {
+  setupController: function() {
     Ember.run.scheduleOnce('afterRender', function() {
       Ember.$('#quote-add').form({
         fields: {
@@ -29,7 +29,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         controller.transitionToRoute('izjave.quote', quote);
       }
 
-      function failure(reason) {
+      function failure() {
         // handle the error
       }
 

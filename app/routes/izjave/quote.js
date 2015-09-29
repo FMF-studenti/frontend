@@ -13,7 +13,7 @@ export default Ember.Route.extend({
         controller.transitionToRoute('izjave');
       }
 
-      function failure(reason) {
+      function failure() {
         // handle the error
       }
 

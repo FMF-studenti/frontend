@@ -1,9 +1,31 @@
 /*******************************
      User Global Variables
 *******************************/
+/* Font */
 
+@fontName          : 'Lato';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@googleFontName    : @fontName;
+@importGoogleFonts : true;
+@googleFontSizes   : '400,700,400italic,700italic';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+
+@imagePath : 'themes/default/assets/images';
+@fontPath : 'themes/default/assets/fonts';
 
 /* Colors */
+@primaryColor        : @blue;
+@secondaryColor      : @black;
+
+@lightPrimaryColor   : @lightBlue;
+@lightSecondaryColor : @lightBlack;
 
 @pageBackgroundMain : #f7f7f7;
 
@@ -12,8 +34,3 @@
 @headerSizeAbsolute : 150;
 @headerSize : (@headerSizeAbsolute / 14);
 @relativeHeaderSize : unit( round(@headerSize * @emSize) / @emSize, em);
-
-/* Font */
-
-@imagePath : 'themes/default/assets/images';
-@fontPath : 'themes/default/assets/fonts';

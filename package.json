@@ -33,6 +33,7 @@
     "ember-cli-ic-ajax": "0.2.1",
     "ember-cli-inject-live-reload": "^1.3.1",
     "ember-cli-less": "^1.3.3",
+    "ember-cli-moment-shim": "0.6.2",
     "ember-cli-qunit": "^1.0.0",
     "ember-cli-release": "0.2.3",
     "ember-cli-simple-auth": "^0.8.0",
@@ -45,6 +46,7 @@
     "ember-export-application-global": "^1.0.3",
     "ember-infinity": "^0.1.1",
     "ember-legacy-views": "^0.2.0",
+    "ember-moment": "4.0.1",
     "semantic-ui-ember": "git://github.com/semantic-org/Semantic-UI-Ember.git#5e7fd4a52612722bc78ef2c4bc2de42367b7a4f1"
   }
 }

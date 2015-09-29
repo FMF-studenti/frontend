@@ -15,6 +15,9 @@ module.exports = function(environment) {
     dotEnv: {
       clientAllowedKeys: ['AUTH_REDIRECT', 'AUTH_CLIENT', 'AUTH_KEY', 'BACKEND_URI']
     },
+    moment: {
+      includeLocales: ['sl']
+    },
 
     APP: {
       authKey: process.env.AUTH_KEY,
@@ -24,7 +27,7 @@ module.exports = function(environment) {
 
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:oauth2-bearer',
-  }
+  };
 
   ENV['simple-auth-oauth2'] = {
     serverTokenEndpoint: process.env.BACKEND_URI + '/auth/token/',
@@ -54,7 +57,7 @@ module.exports = function(environment) {
       'img-src': "'self' data:",
       'script-src': "'self' 'unsafe-inline' http://ember-extension.s3.amazonaws.com",
       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com"
-    }
+    };
 
     ENV['simple-auth']['crossOriginWhitelist'] = [process.env.BACKEND_URI];
   }

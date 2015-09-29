@@ -2,15 +2,29 @@
   {{notes-filter model=filters action="filtersChanged"}}
 </div>
 
-<div class="ui items">
-  {{#each model as |note|}}
+<div class="ui divided items notes">
+  {{#each model as |note index first|}}
+    {{#if (group-validate note (prev-item model index))}}
+      <h3>{{capitalize-first (moment-format note.time "MMMM YYYY")}}</h3>
+    {{/if}}
     <div class="item">
-      <div class="content">
-        <div class="description">
-          <p>{{note.description}}</p>
-        </div>
-        <div class="meta">
-          <span class="author">{{note.author}}</span>
+      <div class="ui equal width grid content">
+        <div class="row">
+          <div class="column">
+            <div class="header">
+              <a href="http://zapiski.fmf.si/data/{{note.file}}" target="_blank">{{note.title}}</a>
+            </div>
+            <div class="meta">
+              <span class="author"><i class="write icon"></i>{{note.author}}</span>
+              <span class="uploader"><i class="upload icon"></i>{{note.uploader}}</span>
+              <span class="author"><i class="calendar icon"></i>{{moment-format note.time "D. M. YYYY"}}</span>
+            </div>
+          </div>
+          <div class="column">
+            <div class="description">
+              <p>{{note.description}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

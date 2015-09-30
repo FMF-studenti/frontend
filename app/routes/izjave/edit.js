@@ -2,6 +2,8 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
+  titleToken: 'Uredi',
+
   setupController: function(controller, model) {
     controller.set('model', model);
     Ember.run.scheduleOnce('afterRender', function() {

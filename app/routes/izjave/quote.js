@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  titleToken: 'Izbrana modrost',
+
   model: function(params) {
     return this.store.findRecord('quote', params.quote_id);
   },

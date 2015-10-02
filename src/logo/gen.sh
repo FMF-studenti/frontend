@@ -4,6 +4,8 @@ inkscape --export-png ../../public/assets/images/logo/logo@2x.png -a 28:28:572:5
 inkscape --export-png ../../public/assets/images/logo/forum-logo-small.png -a 80:80:520:520 -w 80 logo.svg
 inkscape --export-png ../../public/assets/images/logo/forum-avatar.png -a 80:80:520:520 -w 240 logo.svg
 inkscape --export-png ../../public/assets/images/logo/logo-google-square.png -a 80:80:520:520 -w 120 logo.svg
+inkscape --export-png ../../public/assets/images/logo/logo-big.png -a 80:80:520:520 -w 1024 logo.svg
+inkscape --export-png ../../public/assets/images/logo/logo-tiny.png -a 80:80:520:520 -w 16 ../favicon/favicon-small.svg
 
 inkscape --export-png ../../public/assets/images/logo/forum-header.png -h 80 forum.svg
 

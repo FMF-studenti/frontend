@@ -28,8 +28,10 @@
 }
 
 .home.container-holder {
+  padding-top: 14px;
+
   > .grid {
-    margin-top: 14px;
+    margin-top: 0;
     margin-bottom: 14px;
   }
 }

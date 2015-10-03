@@ -10,11 +10,64 @@
   .ui.card > .image {
     min-height: @homeHeaderSize;
     padding-left: 1rem;
+    background-position: right;
+    background-repeat: no-repeat;
 
     .ui.huge.header {
       color: @primaryColor;
       margin: 0 !important;
       line-height: @homeHeaderSize;
     }
+  }
+
+  .ui.card > .image.forum  {
+    background-image: url(images/homepage/forum.png);
+  }
+
+  .ui.card > .image.revija  {
+    background-image: url(images/homepage/revija.png);
+  }
+
+  .ui.card > .image.zapiski  {
+    background-image: url(images/homepage/zapiski.png);
+  }
+
+  .ui.card > .image.izjave  {
+    background-image: url(images/homepage/izjave.png);
+  }
+
+  .ui.card > .image.povezave  {
+    background-image: url(images/homepage/povezave.png);
+  }
+}
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min-resolution: 1.5dppx),
+    only screen and (min-resolution: 144dpi)
+{
+  .home .ui.card > .image.forum  {
+    background-image: url(images/homepage/forum@2x.png);
+    background-size: 176px 64px;
+  }
+
+  .home .ui.card > .image.revija  {
+    background-image: url(images/homepage/revija@2x.png);
+    background-size: 274px 64px;
+  }
+
+  .home .ui.card > .image.zapiski  {
+    background-image: url(images/homepage/zapiski@2x.png);
+    background-size: 186px 64px;
+  }
+
+  .home .ui.card > .image.izjave  {
+    background-image: url(images/homepage/izjave@2x.png);
+    background-size: 180px 64px;
+  }
+
+  .home .ui.card > .image.povezave  {
+    background-image: url(images/homepage/povezave@2x.png);
+    background-size: 156px 64px;
   }
 }

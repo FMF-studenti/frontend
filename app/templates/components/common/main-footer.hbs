@@ -1,8 +1,13 @@
 <div class="ui vertical footer segment">
   <div class="ui center aligned container">
     <div class="ui horizontal small divided link list">
-      <span class="item">© 2015 {{#link-to 'index' activeClass=""}}{{fmf-constant 'name'}}{{/link-to}}</span>
+      <span class="item">© 2015
+        {{#link-to 'index' activeClass="" }}{{fmf-constant 'name'}}{{/link-to}}
+      </span>
       {{#link-to 'authors' class="item" activeClass="" }}Avtorji{{/link-to}}
+      {{#if homepage}}
+        <span class="item">Vir grafik <a href="http://www.freepik.com/" target="_blank">Freepik</a></span>
+      {{/if}}
     </div>
   </div>
 </div>

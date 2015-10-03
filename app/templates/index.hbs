@@ -1,5 +1,135 @@
 {{common/home-header title="Študentske strani FMF"}}
 
-<div class="main container-holder">
-  {{outlet}} {{common/main-footer}}
+<div class="main home container-holder">
+  <div class="ui stackable grid container">
+    <div class="eight wide column">
+      <div class="ui fluid card">
+        <a class="image header forum" href="{{fmf-constant 'url.forum'}}">
+          <span class="ui huge header">Forum</span>
+        </a>
+        <div class="content list">
+          <div class="description">
+            <div class="ui middle aligned divided selection large list avatars">
+              {{#each model.topics as |topic|}}
+                <a class="item" href="{{fmf-constant 'url.forum'}}/t/{{topic.slug}}">
+                  <span class="right floated content">
+                    <span class="ui label">{{moment-format topic.updated "D. M. YYYY"}}</span>
+                  </span>
+                  <img class="ui avatar image" src="{{topic.lastPosterAvatar}}">
+                  <span class="content">
+                    {{topic.title}}
+                  </span>
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eight wide column">
+      <div class="ui fluid card">
+        <a class="image header revija" href="{{fmf-constant 'url.revija'}}">
+          <span class="ui huge header">Revija</span>
+        </a>
+        <div class="content list">
+          <div class="description">
+            <div class="ui middle aligned divided selection large list">
+              {{#each model.articles as |article|}}
+                <a class="item" href="{{article.link}}" target="_blank">
+                  <span class="right floated content">
+                    <span class="ui label">{{moment-format article.published "D. M. YYYY"}}</span>
+                  </span>
+                  <span class="content middle">
+                    {{article.title}}
+                  </span>
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eight wide column">
+      <div class="ui fluid card">
+        {{#link-to 'zapiski' class="image header quotes" }}
+          <span class="ui huge header">Zapiski</span>
+        {{/link-to}}
+        <div class="content list">
+          <div class="description">
+            <div class="ui middle aligned divided selection large list">
+              {{#each model.notes as |note|}}
+                <a class="item" href="{{fmf-constant 'url.zapiski'}}/data/{{note.file}}" target="_blank">
+                  <span class="right floated content">
+                    <span class="ui label">{{moment-format note.time "D. M. YYYY"}}</span>
+                  </span>
+                  <span class="content middle">
+                    {{note.title}}
+                  </span>
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eight wide column">
+      <div class="ui fluid card">
+        {{#link-to 'izjave' class="image header quotes" }}
+          <span class="ui huge header">Izjave</span>
+        {{/link-to}}
+        <div class="content list">
+          <div class="description">
+            <div class="ui large list">
+              {{#each model.quotes as |quote|}}
+                <div class="quote-label">
+                  {{#if quote.random}}
+                    Naključna izjava:
+                  {{else}}
+                    Zadnja izjava:
+                  {{/if}}
+                </div>
+
+                <blockquote>
+                  <div class="content">
+                    <div class="description">
+                      <p>{{quote.content}}</p>
+                    </div>
+                    <div class="meta">
+                      <cite>{{quote.author}}</cite>
+                    </div>
+                  </div>
+                </blockquote>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="eight wide column">
+      <div class="ui fluid card">
+        <div class="image header links">
+          <span class="ui huge header">Ostale povezave</span>
+        </div>
+        <div class="content list">
+          <div class="description">
+            <div class="ui middle aligned divided selection large list">
+              {{#each model.links as |link|}}
+                <a class="item" href="{{link.url}}" target="_blank">
+                  <span class="content middle">
+                    {{link.title}}
+                  </span>
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{common/main-footer}}
 </div>

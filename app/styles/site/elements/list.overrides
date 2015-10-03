@@ -1,8 +1,6 @@
 /*******************************
          Site Overrides
 *******************************/
-
-
 /* Inverted */
 
 .ui.inverted.link.list .item,
@@ -27,11 +25,63 @@
 }
 
 
-/* Quotes */
+/* Home */
+.home {
+  .ui.card > .content.list {
+    padding-top: 0 !important;
+    border-top-color: @borderColor;
+  }
 
-.ui.items > blockquote.item > .content {
+  .ui.selection.list {
+    margin: 0 -1rem -1rem -1rem;
+  }
+
+  .ui.selection.list > .item {
+    color: @textColor !important;
+    padding: 0.5em 1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    .content.middle {
+      line-height: unit(32/14, rem);
+    }
+  }
+
+  .ui.selection.list.avatars > .item {
+    padding-left: 0.5em;
+  }
+
+  .ui.list {
+    > .quote-label {
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    > blockquote {
+      margin: 0;
+
+      p {
+        margin-bottom: 0.5em !important;
+      }
+
+      .description {
+        font-size: @large;
+      }
+
+      .meta {
+        font-size: @medium;
+      }
+    }
+  }
+}
+
+/* Quotes */
+.ui > blockquote > .content {
   padding: 0 0 0 20px;
   border-left: 5px solid @midWhite;
+  color: @textColor;
+
   .description {
     font-size: @big;
   }
@@ -47,7 +97,7 @@
   }
 }
 
-.ui.items > blockquote.item.large > .content {
+.ui > blockquote.large > .content {
   .description {
     font-size: @huge;
   }

@@ -1,0 +1,20 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.home {
+  .ui.card {
+    box-shadow: @linkHoverBoxShadow !important;
+  }
+
+  .ui.card > .image {
+    min-height: @homeHeaderSize;
+    padding-left: 1rem;
+
+    .ui.huge.header {
+      color: @primaryColor;
+      margin: 0 !important;
+      line-height: @homeHeaderSize;
+    }
+  }
+}

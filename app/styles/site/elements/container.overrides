@@ -26,3 +26,10 @@
     padding-bottom: 0.25em;
   }
 }
+
+.home.container-holder {
+  > .grid {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+}

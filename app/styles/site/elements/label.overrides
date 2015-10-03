@@ -1,0 +1,7 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.home .ui.list > .item .label {
+  margin: @itemLabelVerticalMargin 0;
+}

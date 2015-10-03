@@ -31,7 +31,8 @@ module.exports = function(environment) {
 
   ENV['simple-auth-oauth2'] = {
     serverTokenEndpoint: process.env.BACKEND_URI + '/auth/token/',
-    serverTokenRevocationEndpoint: process.env.BACKEND_URI + '/auth/revoke_token/'
+    serverTokenRevocationEndpoint: process.env.BACKEND_URI + '/auth/revoke_token/',
+    serverExtraEndpoint: process.env.BACKEND_URI + '/auth/forum_logout/'
   };
 
   ENV.torii = {

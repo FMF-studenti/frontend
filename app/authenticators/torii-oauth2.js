@@ -3,6 +3,14 @@ import ENV from 'fmf/config/environment';
 import OAuth2 from 'simple-auth-oauth2/authenticators/oauth2';
 
 export default OAuth2.extend({
+  serverExtraEndpoint: null,
+
+  init: function() {
+    this.serverExtraEndpoint = ENV['simple-auth-oauth2'].serverExtraEndpoint;
+
+    return this._super();
+  },
+
   authenticate: function(options) {
     return this.fetchOauthData(options).then(this.fetchAccessToken.bind(this));
   },
@@ -50,6 +58,41 @@ export default OAuth2.extend({
       }, function(error) {
         reject(error);
       });
+    });
+  },
+
+  invalidate: function(data) {
+    var _this = this;
+
+    function success(resolve) {
+      Ember.run.cancel(_this._refreshTokenTimeout);
+      delete _this._refreshTokenTimeout;
+      resolve();
+    }
+    return new Ember.RSVP.Promise(function(resolve) {
+      if (Ember.isEmpty(_this.serverTokenRevocationEndpoint)) {
+        success(resolve);
+      } else {
+        Ember.$.ajax({
+          url: _this.serverExtraEndpoint,
+          type: "POST"
+        }).then(function() {
+          var requests = [];
+
+          Ember.A(['access_token']).forEach(function(tokenType) {
+            var token = data[tokenType];
+            if (!Ember.isEmpty(token)) {
+              requests.push(_this.makeRequest(_this.serverTokenRevocationEndpoint, {
+                token_type_hint: tokenType,
+                token: token
+              }));
+            }
+          });
+          Ember.$.when.apply(Ember.$, requests).always(function() {
+            success(resolve);
+          });
+        });
+      }
     });
   }
 });

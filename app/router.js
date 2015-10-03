@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('help');
     this.route('upload');
   });
+  this.route('logout');
 });
 
 export default Router;

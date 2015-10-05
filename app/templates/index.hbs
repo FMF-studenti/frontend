@@ -40,7 +40,7 @@
                   <span class="right floated content">
                     <span class="ui label">{{moment-format article.published "D. M. YYYY"}}</span>
                   </span>
-                  <span class="content middle">
+                  <span class="content">
                     {{article.title}}
                   </span>
                 </a>
@@ -64,7 +64,7 @@
                   <span class="right floated content">
                     <span class="ui label">{{moment-format note.time "D. M. YYYY"}}</span>
                   </span>
-                  <span class="content middle">
+                  <span class="content">
                     {{note.title}}
                   </span>
                 </a>
@@ -119,7 +119,7 @@
             <div class="ui middle aligned divided selection large list">
               {{#each model.links as |link|}}
                 <a class="item" href="{{link.url}}" target="_blank">
-                  <span class="content middle">
+                  <span class="content">
                     {{link.title}}
                   </span>
                 </a>

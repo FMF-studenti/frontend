@@ -27,13 +27,16 @@
 
 
 /* Custom */
-
 .main.menu .item.header {
   font-size: @relativeLarge;
 }
 
 .main.menu .item:not(.header) {
   text-transform: uppercase;
+}
+
+.account.menu {
+  width: 200px;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {

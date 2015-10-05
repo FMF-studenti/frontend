@@ -26,23 +26,29 @@
     {{#if session.isAuthenticated}}
       <div class="ui dropdown link item" tabindex="-1">
         <span class="text">
-          <img class="ui avatar image" src="{{ session.currentUser.avatar }}">{{ session.currentUser.name }}</span>
+          <img class="ui avatar image" src="{{ session.currentUser.avatar }}">
+          {{#if session.currentUser.name}}
+            {{ session.currentUser.name }}
+          {{else}}
+            {{ session.currentUser.username }}
+          {{/if}}
+        </span>
         <i class="dropdown icon" tabindex="0"><div class="menu"></div></i>
-        <div class="menu" tabindex="-1">
-          <div class="item">
-            Messages
+        <div class="menu account" tabindex="-1">
+          <a class="item" href="{{ fmf-constant 'url.forum' }}/users/{{session.currentUser.username}}/messages">
             {{#if session.currentUser.messages }}
               <div class="ui label nav red">{{session.currentUser.messages}}</div>
             {{else}}
               <div class="ui label nav">0</div>
             {{/if}}
-          </div>
-          <div class="item" {{ action 'invalidateSession' }}>Logout</div>
+            Zasebna sporočila
+          </a>
+          <div class="item" {{ action 'invalidateSession' }}>Odjava</div>
         </div>
       </div>
     {{else}}
       <div class="item">
-        <a class="ui button" {{action 'authenticate' 'fmf-oauth2'}}>Log in</a>
+        <a class="ui button" {{action 'authenticate' 'fmf-oauth2'}}>Prijava</a>
       </div>
     {{/if}}
   </div>

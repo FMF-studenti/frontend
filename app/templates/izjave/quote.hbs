@@ -4,11 +4,11 @@
     <div class="content">
       <div class="buttons">
         {{#if session.isAuthenticated}}
-          <p>
+          {{!-- <p>
             <button class="ui primary icon button">
               <i class="warning circle icon"></i>
             </button>
-          </p>
+          </p> --}}
           {{#if session.currentUser.administrator }}
             <p>
               {{#link-to 'izjave.edit' model class="ui primary icon button" activeClass="" }}

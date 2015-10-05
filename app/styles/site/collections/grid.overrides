@@ -1,0 +1,11 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.notes-filter.ui.grid {
+  margin: -0.25rem;
+
+  .column {
+    padding: 0.25rem;
+  }
+}

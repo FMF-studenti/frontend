@@ -5,21 +5,24 @@ export default Ember.Controller.extend({
     'department',
     'level',
     'year',
-    'subject'
+    'subject',
+    'search'
   ],
   department: null,
   level: null,
   year: null,
   subject: null,
+  search: null,
 
   notesQuery: function() {
     return {
       'department': this.get('department'),
       'level': this.get('level'),
       'year': this.get('year'),
-      'subject': this.get('subject')
+      'subject': this.get('subject'),
+      'search': this.get('search')
     };
-  }.property('department', 'level', 'year', 'subject'),
+  }.property('department', 'level', 'year', 'subject', 'search'),
 
   actions: {
     filtersChanged: function(filters) {
@@ -27,6 +30,7 @@ export default Ember.Controller.extend({
       this.set('level', filters.level ? filters.level : null);
       this.set('year', filters.year ? filters.year : null);
       this.set('subject', filters.subject ? filters.subject : null);
+      this.set('search', filters.search ? filters.search : null);
     }
   }
 });

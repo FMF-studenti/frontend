@@ -15,12 +15,14 @@ Router.map(function() {
     this.route('edit', {
       path: ':quote_id/edit'
     });
+    this.route('loading');
   });
   this.route('zapiski', function() {
     this.route('list');
     this.route('register');
     this.route('help');
     this.route('upload');
+    this.route('loading');
   });
   this.route('logout');
 });

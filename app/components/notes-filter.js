@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['ui', 'center', 'aligned', 'basic', 'segment'],
+  classNames: ['ui', 'stackable', 'grid', 'notes-filter'],
 
   setupFilters: function() {
     var control = this.get('control');
@@ -9,7 +9,8 @@ export default Ember.Component.extend({
       department: control['department'] ? control['department'] : 0,
       level: control['level'] ? control['level'] : 0,
       year: control['year'] ? control['year'] : 0,
-      subject: control['subject'] ? control['subject'] : 0
+      subject: control['subject'] ? control['subject'] : 0,
+      search: control['search'] ? control['search'] : ''
     });
   }.on('init'),
 
@@ -22,15 +23,21 @@ export default Ember.Component.extend({
   level: '0',
   year: '0',
   subject: '0',
+  search: '',
 
   filterChanged: function() {
     this.sendAction('action', {
       department: Number(this.get('department')),
       level: Number(this.get('level')),
       year: Number(this.get('year')),
-      subject: Number(this.get('subject'))
+      subject: Number(this.get('subject')),
+      search: this.get('search')
     });
   }.observes('department', 'level', 'year', 'subject'),
+
+  searchChanged: function() {
+    Ember.run.debounce(this, this.filterChanged, 300);
+  }.observes('search'),
 
   departmentObserver: function() {
     this.processSubjects();

@@ -27,12 +27,26 @@
 
 
 /* Custom */
+.ui .menu .item > .label.nav {
+  margin-top: -.15em;
+  margin-bottom: -.15em;
+  margin-right: 0;
+  padding: .3em .71428571em;
+  float: right;
+  text-align: center;
+}
+
 .main.menu .item.header {
   font-size: @relativeLarge;
 }
 
 .main.menu .item:not(.header) {
   text-transform: uppercase;
+}
+
+.main.menu .item .ui.avatar.image {
+  margin-top: -4px;
+  margin-bottom: -4px;
 }
 
 .account.menu {

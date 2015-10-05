@@ -21,6 +21,10 @@ export default Ember.Route.extend(InfinityRoute, InfinityExtra, {
     subject: {
       replace: true,
       refreshModel: true
+    },
+    search: {
+      replace: true,
+      refreshModel: true
     }
   },
 
@@ -45,7 +49,14 @@ export default Ember.Route.extend(InfinityRoute, InfinityExtra, {
       properties['subject__year'] = params.year;
     }
     if (params.subject) {
-      properties['subject'] = params.subject;
+      if (Number(params.subject) === -1) {
+        properties['subject__others'] = 'True';
+      } else {
+        properties['subject'] = params.subject;
+      }
+    }
+    if (params.search) {
+      properties['search'] = params.search;
     }
 
     return this.infinityModel('note', properties);

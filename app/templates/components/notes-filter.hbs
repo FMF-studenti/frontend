@@ -1,63 +1,82 @@
-<div id="notes-department-dropdown" class="ui search selection dropdown">
-  {{input type="hidden" value=department}}
-  <i class="dropdown icon"></i>
-  <div class="default text">Oddelek</div>
-  <div class="menu">
-    <div class="item" data-value="0">
-      Vsi oddelki
-    </div>
-    {{#each model.departments as |department|}}
-      <div class="item" data-value="{{department.id}}">
-        {{department.name}}
-      </div>
-    {{/each}}
+<div class="sixteen wide column">
+  <div class="ui icon fluid input">
+    <i class="search icon"></i> {{input type="text" placeholder="Išči" value=search}}
   </div>
 </div>
 
-<div id="notes-level-dropdown" class="ui search selection dropdown">
-  {{input type="hidden" value=level}}
-  <i class="dropdown icon"></i>
-  <div class="default text">Oddelek</div>
-  <div class="menu">
-    <div class="item" data-value="0">
-      Vse stopnje
-    </div>
-    {{#each model.levels as |level|}}
-      <div class="item" data-value="{{level.id}}">
-        {{level.name}}
+<div class="eight wide column">
+  <div id="notes-department-dropdown" class="ui search selection fluid dropdown">
+    {{input type="hidden" value=department}}
+    <i class="dropdown icon"></i>
+    <div class="default text">Oddelek</div>
+    <div class="menu">
+      <div class="item" data-value="0">
+        Vsi oddelki
       </div>
-    {{/each}}
+      {{#each model.departments as |department|}}
+        <div class="item" data-value="{{department.id}}">
+          {{department.name}}
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>
 
-<div id="notes-year-dropdown" class="ui search selection dropdown">
-  {{input type="hidden" value=year}}
-  <i class="dropdown icon"></i>
-  <div class="default text">Letnik</div>
-  <div class="menu">
-    <div class="item" data-value="0">
-      Vsi letniki
-    </div>
-    {{#each model.years as |year|}}
-      <div class="item" data-value="{{year.id}}">
-        {{year.name}}
+<div class="eight wide column">
+  <div id="notes-level-dropdown" class="ui search selection fluid dropdown">
+    {{input type="hidden" value=level}}
+    <i class="dropdown icon"></i>
+    <div class="default text">Oddelek</div>
+    <div class="menu">
+      <div class="item" data-value="0">
+        Vse stopnje
       </div>
-    {{/each}}
+      {{#each model.levels as |level|}}
+        <div class="item" data-value="{{level.id}}">
+          {{level.name}}
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>
 
-<div id="notes-subject-dropdown" class="ui search selection dropdown">
-  {{input type="hidden" value=subject}}
-  <i class="dropdown icon"></i>
-  <div class="default text">Predmet</div>
-  <div class="menu">
-    <div class="item" data-value="0">
-      Vsi predmeti
-    </div>
-    {{#each model.subjects as |subject|}}
-      <div class="item" data-value="{{subject.id}}">
-        {{subject.name}}
+<div class="eight wide column">
+  <div id="notes-year-dropdown" class="ui search selection fluid dropdown">
+    {{input type="hidden" value=year}}
+    <i class="dropdown icon"></i>
+    <div class="default text">Letnik</div>
+    <div class="menu">
+      <div class="item" data-value="0">
+        Vsi letniki
       </div>
-    {{/each}}
+      {{#each model.years as |year|}}
+        <div class="item" data-value="{{year.id}}">
+          {{year.name}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div class="eight wide column">
+  <div id="notes-subject-dropdown" class="ui search selection fluid dropdown">
+    {{input type="hidden" value=subject}}
+    <i class="dropdown icon"></i>
+    <div class="default text">Predmet</div>
+    <div class="menu">
+      <div class="item" data-value="0">
+        Vsi predmeti
+      </div>
+      {{#each model.subjects as |subject|}}
+        {{#unless subject.others}}
+          <div class="item" data-value="{{subject.id}}">
+            {{subject.name}}
+          </div>
+        {{/unless}}
+      {{/each}}
+      <div class="item" data-value="-1">
+        Drugo
+      </div>
+    </div>
   </div>
 </div>

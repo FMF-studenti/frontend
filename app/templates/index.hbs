@@ -53,14 +53,14 @@
 
     <div class="eight wide column">
       <div class="ui fluid card">
-        {{#link-to 'zapiski' class="image header zapiski" }}
+        {{#link-to 'notes' class="image header notes" }}
           <span class="ui huge header">Zapiski</span>
         {{/link-to}}
         <div class="content list">
           <div class="description">
             <div class="ui middle aligned divided selection large list">
               {{#each model.notes as |note|}}
-                <a class="item" href="{{fmf-constant 'url.zapiski'}}/data/{{note.file}}" target="_blank">
+                <a class="item" href="{{fmf-constant 'url.notes'}}/data/{{note.file}}" target="_blank">
                   <span class="right floated content">
                     <span class="ui label">{{moment-format note.time "D. M. YYYY"}}</span>
                   </span>

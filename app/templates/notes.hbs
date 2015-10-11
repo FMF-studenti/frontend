@@ -1,0 +1,23 @@
+{{common/main-header title="Zapiski" subtitle="Literatura, ustvarjena na predavanjih in ob učenju"}}
+
+{{#common/main-container}}
+  <div class="ui primary secondary pointing menu">
+    {{#link-to 'notes.index' class="item" }}
+      Zapiski
+    {{/link-to}}
+    {{#link-to 'notes.list' class="item" }}
+      Seznam
+    {{/link-to}}
+    {{#link-to 'notes.register' class="item" }}
+      Vnos
+    {{/link-to}}
+    {{#link-to 'notes.upload' class="item" }}
+      Naloži
+    {{/link-to}}
+    {{#link-to 'notes.help' class="item" }}
+      Pomoč
+    {{/link-to}}
+  </div>
+
+  {{outlet}}
+{{/common/main-container}}

@@ -6,6 +6,6 @@ export default Ember.Service.extend({
   url: {
     forum: 'http://forum.fmf.si',
     revija: 'http://revija.fmf.si',
-    zapiski: 'http://zapiski.fmf.si'
+    notes: 'http://zapiski.fmf.si'
   }
 });

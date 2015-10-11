@@ -10,8 +10,8 @@ inkscape --export-png ../../public/assets/images/homepage/povezave@2x.png -h 128
 # inkscape --export-png ../../public/assets/images/homepage/predmeti.png -h 64 predmeti.svg
 # inkscape --export-png ../../public/assets/images/homepage/predmeti@2x.png -h 128 predmeti.svg
 
-inkscape --export-png ../../public/assets/images/homepage/zapiski.png -h 64 zapiski.svg
-inkscape --export-png ../../public/assets/images/homepage/zapiski@2x.png -h 128 zapiski.svg
+inkscape --export-png ../../public/assets/images/homepage/notes.png -h 64 notes.svg
+inkscape --export-png ../../public/assets/images/homepage/notes@2x.png -h 128 notes.svg
 
 convert revija.xcf -background 'none' -flatten -alpha on  ../../public/assets/images/homepage/revija.png
 convert revija@2x.xcf -background 'none' -flatten -alpha on ../../public/assets/images/homepage/revija@2x.png

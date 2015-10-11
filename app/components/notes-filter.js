@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
   setupFilters: function() {
     var control = this.get('control');
+
     this.setProperties({
       department: control['department'] ? control['department'] : 0,
       level: control['level'] ? control['level'] : 0,
@@ -12,7 +13,12 @@ export default Ember.Component.extend({
       subject: control['subject'] ? control['subject'] : 0,
       search: control['search'] ? control['search'] : ''
     });
-  }.on('init'),
+
+    this.$('#notes-department-dropdown').dropdown('set selected', String(control['department'] ? control['department'] : 0));
+    this.$('#notes-level-dropdown').dropdown('set selected', String(control['level'] ? control['level'] : 0));
+    this.$('#notes-year-dropdown').dropdown('set selected', String(control['year'] ? control['year'] : 0));
+    this.$('#notes-subject-dropdown').dropdown('set selected', String(control['subject'] ? control['subject'] : 0));
+  }.observes('initFilters'),
 
   prepareDropdown: function() {
     this.$('.ui.dropdown').dropdown();

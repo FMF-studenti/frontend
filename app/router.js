@@ -17,8 +17,12 @@ Router.map(function() {
     });
     this.route('loading');
   });
-  this.route('zapiski', function() {
-    this.route('list');
+  this.route('notes', {
+    path: '/zapiski'
+  }, function() {
+    this.route('list', function() {
+      this.route('loading');
+    });
     this.route('register');
     this.route('help');
     this.route('upload');

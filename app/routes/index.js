@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       topics: this.store.findAll('topic'),
       articles: this.store.findAll('blogArticle'),
-      notes: this.store.find('note', {
+      notes: this.store.find('notes/note', {
         'page_size': 6
       }),
       quotes: Ember.$.getJSON(ENV.APP.backendUri + '/api/quotes/latest_and_random').then(function(response) {

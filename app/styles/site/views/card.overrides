@@ -28,8 +28,8 @@
     background-image: url(images/homepage/revija.png);
   }
 
-  .ui.card > .image.zapiski  {
-    background-image: url(images/homepage/zapiski.png);
+  .ui.card > .image.notes  {
+    background-image: url(images/homepage/notes.png);
   }
 
   .ui.card > .image.izjave  {
@@ -56,8 +56,8 @@
     background-size: 274px 64px;
   }
 
-  .home .ui.card > .image.zapiski  {
-    background-image: url(images/homepage/zapiski@2x.png);
+  .home .ui.card > .image.notes  {
+    background-image: url(images/homepage/notes@2x.png);
     background-size: 186px 64px;
   }
 

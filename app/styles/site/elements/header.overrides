@@ -1,13 +1,13 @@
 /*******************************
          Site Overrides
 *******************************/
-
 .header .main {
   height: unit(@headerSizeAbsolute * 3 / 5, px);
   font-size: @huge;
   font-weight: normal;
   display: table-cell;
   vertical-align: middle;
+
   .ui.header {
     color: @primaryColor;
     margin-bottom: 0;
@@ -19,7 +19,8 @@
   padding-left: 96px + 12px;
   font-size: @huge;
   font-weight: normal;
-  background: url(images/logo/logo.png) no-repeat center left;
+  background: url("images/logo/logo.png") no-repeat center left;
+
   .ui.header {
     color: @primaryColor;
     font-size: 2.25em;
@@ -28,19 +29,24 @@
   }
 }
 
+.ui.header.first {
+  margin-top: 1em;
+}
+
 /* Responsive */
-@media only screen and (max-width: @largestMobileScreen)
-{
+@media only screen and (max-width: @largestMobileScreen) {
   .header .main,
   .header .home {
     font-size: @large;
   }
+
   .header .home {
     min-height: 48px;
     padding-left: 48px + 6px;
     padding-top: 24px;
     padding-bottom: 24px;
     background-size: 48px 48px;
+
     .ui.header {
       line-height: 1.4285em;
     }
@@ -49,11 +55,10 @@
 
 /* Retina support */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 1.5dppx),
-    only screen and (min-resolution: 144dpi)
-{
-    .header .home {
-        background-image: url(images/logo/logo@2x.png);
-        background-size: 96px 96px;
-    }
+only screen and (min-resolution: 1.5dppx),
+only screen and (min-resolution: 144dpi) {
+  .header .home {
+    background-image: url("images/logo/logo@2x.png");
+    background-size: 96px 96px;
+  }
 }

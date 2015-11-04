@@ -24,6 +24,9 @@ Router.map(function() {
       this.route('loading');
     });
     this.route('register');
+    this.route('register-file', {
+      path: 'register/:file_id'
+    });
     this.route('help');
     this.route('upload');
     this.route('loading');

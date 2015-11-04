@@ -1,1 +1,34 @@
-<p><i>Zaradi prenove strani bo vnos zapiskov mogoč čez nekaj dni.</i></p>
+<h2 class="ui header first">Vnos datoteke</h2>
+
+{{#if session.isAuthenticated}}
+  <p>
+    <strong>Izberi datoteko, ki si jo skeniral/a, in dodaj podrobnosti o njej!</strong>
+    Za vsako datoteko je na voljo predogled. V primeru, da datoteka ni OK, lahko zahtevaš izbris.</p>
+
+  <div class="ui list">
+    {{#each model as |file|}}
+      <div class="item">
+        <div class="content">
+          {{#link-to 'notes.register-file' file activeClass="" }}
+            {{file.name}}
+          {{/link-to}}
+          <a href="{{fmf-constant 'url.notes'}}/tmp/{{file.name}}" class="ui primary icon button">
+            <i class="unhide icon"></i>
+          </a>
+          {{#if session.isAuthenticated}}
+            <button class="ui primary icon button">
+              <i class="warning circle icon"></i>
+            </button>
+          {{/if}}
+        </div>
+      </div>
+{{else}}
+
+  <p><i>Trenutno ni skeniranih datotek.</i></p>
+    {{/each}}
+  </div>
+
+  <p>Ne pozabite registrirati skeniranih zapiskov! Nevnešeni zapiski bodo po nekaj časa izbrisani!</p>
+{{else}}
+  <i>Za vnos novega zapiska se je potrebno prijaviti.</i>
+{{/if}}

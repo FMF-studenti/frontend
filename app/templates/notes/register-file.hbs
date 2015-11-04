@@ -1,0 +1,92 @@
+{{#if session.isAuthenticated}}
+  <h2 class="ui header first">Vnos datoteke {{model.name}}</h2>
+  <form id="note-register" class="ui form" {{action "registerNote" on="submit"}}>
+    {{input type="hidden" value=model.name name="file"}}
+    <div class="field">
+      <label>Naslov zapiska</label>
+      {{input type="text" value=title name="title"}}
+    </div>
+    <div class="field">
+      <label>Avtor izvirnika</label>
+      {{input type="text" value=author name="author"}}
+    </div>
+    <div class="field">
+      <label>Nalagalec</label>
+      {{input type="text" value=uploader name="uploader"}}
+    </div>
+    <div class="field">
+      <label>Oddelek</label>
+      <div id="notes-add-department-dropdown" class="ui search selection fluid dropdown">
+        {{input type="hidden" value=department name="department"}}
+        <i class="dropdown icon"></i>
+        <div class="default text">Izberi oddelek</div>
+        <div class="menu">
+          {{#each filters.departments as |department|}}
+            <div class="item" data-value="{{department.id}}">
+              {{department.name}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Stopnja</label>
+      <div id="notes-add-level-dropdown" class="ui search selection fluid dropdown">
+        {{input type="hidden" value=level name="level"}}
+        <i class="dropdown icon"></i>
+        <div class="default text">Izberi stopnjo</div>
+        <div class="menu">
+          {{#each filters.levels as |level|}}
+            <div class="item" data-value="{{level.id}}">
+              {{level.name}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Letnik</label>
+      <div id="notes-add-year-dropdown" class="ui search selection fluid dropdown">
+        {{input type="hidden" value=year name="year"}}
+        <i class="dropdown icon"></i>
+        <div class="default text">Izberi letnik</div>
+        <div class="menu">
+          {{#each filters.years as |year|}}
+            <div class="item" data-value="{{year.id}}">
+              {{year.name}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Predmet</label>
+      <div id="notes-add-subject-dropdown" class="ui search selection fluid dropdown">
+        {{input type="hidden" value=subject name="subject"}}
+        <i class="dropdown icon"></i>
+        <div class="default text">Izberi predmet</div>
+        <div class="menu">
+          {{#each filters.subjects as |subject|}}
+            <div class="item" data-value="{{subject.id}}">
+              {{subject.name}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Opis</label>
+      {{textarea value=description name="description"}}
+    </div>
+
+    <button class="ui primary labeled icon button" type="submit">
+      <i class="plus icon"></i> Vnesi
+    </button>
+    {{#link-to 'notes.register' class="ui button" activeClass="" }}
+      Nazaj
+    {{/link-to}}
+  </form>
+{{else}}
+  <h2 class="ui header first">Vnos datoteke</h2>
+  <i>Za vnos novega zapiska se je potrebno prijaviti.</i>
+{{/if}}

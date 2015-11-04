@@ -1,5 +1,5 @@
 <div class="ui divided items notes">
-  {{#each model as |note index first|}}
+  {{#each model as |note index|}}
     {{#if (group-validate note (prev-item model index))}}
       <h3>{{capitalize-first (moment-format note.time "MMMM YYYY")}}</h3>
     {{/if}}

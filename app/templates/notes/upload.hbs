@@ -1,12 +1,18 @@
-<div>
-  <p>Izberi datoteko za prenos (v formatu PDF, do 300 MiB):</p>
-  <p>{{notes-upload action="uploadCompleted"}}</p>
-  <p>&nbsp;</p>
-</div>
+<h2 class="ui header first">Nalaganje datoteke</h2>
 
-<div id="notes-upload-progress" class="ui progress" data-percent="0">
-  <div class="bar">
-    <div class="progress"></div>
+{{#if session.isAuthenticated}}
+  <div>
+    <p>Izberi datoteko za prenos (v formatu PDF, do 300 MiB):</p>
+    <p>{{notes-upload action="uploadCompleted"}}</p>
+    <p>&nbsp;</p>
   </div>
-  <div class="label">Izberi datoteko za prenos</div>
-</div>
+
+  <div id="notes-upload-progress" class="ui progress" data-percent="0">
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+    <div class="label">Izberi datoteko za prenos</div>
+  </div>
+{{else}}
+  <i>Za nalaganje novega zapiska se je potrebno prijaviti.</i>
+{{/if}}

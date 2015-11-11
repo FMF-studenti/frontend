@@ -13,7 +13,7 @@
               {{#each model.topics as |topic|}}
                 <a class="item" href="{{fmf-constant 'url.forum'}}/t/{{topic.slug}}">
                   <span class="right floated content">
-                    <span class="ui label">{{moment-format topic.updated "D. M. YYYY"}}</span>
+                    <span class="ui label">{{moment-format topic.updated "D. M. YYYY, HH:mm"}}</span>
                   </span>
                   <img class="ui avatar image" src="{{topic.lastPosterAvatar}}">
                   <span class="content">

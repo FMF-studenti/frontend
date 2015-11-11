@@ -1,0 +1,22 @@
+<div class="container error-page">
+  <h1 class="ui primary header">404</h1>
+  <h2 class="ui primary header">Ups, naleteli ste na napako</h2>
+
+  <p>Žal iskana stran ne obstaja. Če je napaka na naši strani, se opravičujemo.</p>
+
+  <p>
+    {{#link-to 'index' activeClass="" class="huge ui button primary" }}Domov{{/link-to}}
+  </p>
+
+  <div id="error-page-footer" class="footer-padding">
+    <div class="ui center aligned container">
+      <div class="ui horizontal small divided link list">
+        <span class="item">© 2015
+          {{#link-to 'index' activeClass="" }}{{fmf-constant 'name'}}{{/link-to}}
+        </span>
+        {{#link-to 'authors' class="item" activeClass="" }}Avtorji{{/link-to}}
+        {{#link-to 'cookies' class="item" activeClass="" }}Piškotki{{/link-to}}
+      </div>
+    </div>
+  </div>
+</div>

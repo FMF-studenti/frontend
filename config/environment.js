@@ -24,11 +24,19 @@ module.exports = function(environment) {
       backendUri: process.env.BACKEND_URI
     },
 
+    metricsAdapters: [{
+      name: 'GoogleAnalytics',
+      environments: ['production'],
+      config: {
+        id: process.env.GA_CODE
+      }
+    }],
+
     contentSecurityPolicy: {
-      'connect-src': "'self' " + process.env.BACKEND_URI,
+      'connect-src': "'self' www.google-analytics.com " + process.env.BACKEND_URI,
       'font-src': "'self' https://fonts.gstatic.com data:",
-      'img-src': "'self' " + process.env.FORUM_URI + " https://avatars.discourse.org data:",
-      'script-src': "'self' 'unsafe-inline' http://ember-extension.s3.amazonaws.com",
+      'img-src': "'self' www.google-analytics.com " + process.env.FORUM_URI + " https://avatars.discourse.org data:",
+      'script-src': "'self' 'unsafe-inline' www.google-analytics.com http://ember-extension.s3.amazonaws.com",
       'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com"
     }
   };

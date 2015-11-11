@@ -33,19 +33,19 @@ module.exports = function(defaults) {
   app.import('bower_components/js-cookie/src/js.cookie.js');
 
   app.import('vendor/errors/400.html', {
-    destDir: ''
+    destDir: 'errors/'
   });
   app.import('vendor/errors/401.html', {
-    destDir: ''
+    destDir: 'errors/'
   });
   app.import('vendor/errors/403.html', {
-    destDir: ''
+    destDir: 'errors/'
   });
   app.import('vendor/errors/404.html', {
-    destDir: ''
+    destDir: 'errors/'
   });
   app.import('vendor/errors/500.html', {
-    destDir: ''
+    destDir: 'errors/'
   });
 
   return app.toTree();

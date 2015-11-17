@@ -6,7 +6,7 @@ module('Unit | Mixin | infinity extra');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var InfinityExtraObject = Ember.Object.extend(InfinityExtraMixin);
-  var subject = InfinityExtraObject.create();
+  let InfinityExtraObject = Ember.Object.extend(InfinityExtraMixin);
+  let subject = InfinityExtraObject.create();
   assert.ok(subject);
 });

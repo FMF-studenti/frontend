@@ -6,6 +6,6 @@ moduleFor('route:notes/register-file', 'Unit | Route | notes/register file', {
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  let route = this.subject();
   assert.ok(route);
 });

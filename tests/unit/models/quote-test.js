@@ -6,7 +6,7 @@ moduleForModel('quote', 'Unit | Model | quote', {
 });
 
 test('it exists', function(assert) {
-  var model = this.subject();
-  // var store = this.store();
+  let model = this.subject();
+  // let store = this.store();
   assert.ok(!!model);
 });

@@ -6,6 +6,6 @@ moduleFor('route:notes/list/loading', 'Unit | Route | notes/list/loading', {
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  let route = this.subject();
   assert.ok(route);
 });

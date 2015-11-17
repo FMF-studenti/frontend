@@ -6,7 +6,7 @@ moduleForModel('notes/file', 'Unit | Model | notes/file', {
 });
 
 test('it exists', function(assert) {
-  var model = this.subject();
-  // var store = this.store();
+  let model = this.subject();
+  // let store = this.store();
   assert.ok(!!model);
 });

@@ -5,5 +5,5 @@ export function initialize(container, application) {
 
 export default {
   name: 'settings',
-  initialize: initialize
+  initialize
 };

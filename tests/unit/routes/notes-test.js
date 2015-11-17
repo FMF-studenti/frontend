@@ -1,7 +1,4 @@
-import {
-  moduleFor, test
-}
-from 'ember-qunit';
+import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:notes', 'Unit | Route | notes', {
   // Specify the other units that are required for this test.
@@ -9,6 +6,6 @@ moduleFor('route:notes', 'Unit | Route | notes', {
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  let route = this.subject();
   assert.ok(route);
 });

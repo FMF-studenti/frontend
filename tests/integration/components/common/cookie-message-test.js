@@ -6,16 +6,15 @@ moduleForComponent('common/cookie-message', 'Integration | Component | common/co
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
-
+  
   // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
 
   this.render(hbs`{{common/cookie-message}}`);
 
   assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
+  // Template block usage:" + EOL +
   this.render(hbs`
     {{#common/cookie-message}}
       template block text

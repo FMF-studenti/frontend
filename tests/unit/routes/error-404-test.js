@@ -6,6 +6,6 @@ moduleFor('route:error-404', 'Unit | Route | error 404', {
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  let route = this.subject();
   assert.ok(route);
 });

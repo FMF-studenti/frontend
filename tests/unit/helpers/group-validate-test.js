@@ -5,6 +5,6 @@ module('Unit | Helper | group validate');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = groupValidate(42);
+  let result = groupValidate(42);
   assert.ok(result);
 });

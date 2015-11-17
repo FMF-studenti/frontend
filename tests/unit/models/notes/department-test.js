@@ -1,7 +1,4 @@
-import {
-  moduleForModel, test
-}
-from 'ember-qunit';
+import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('notes/department', 'Unit | Model | notes/department', {
   // Specify the other units that are required for this test.
@@ -9,7 +6,7 @@ moduleForModel('notes/department', 'Unit | Model | notes/department', {
 });
 
 test('it exists', function(assert) {
-  var model = this.subject();
-  // var store = this.store();
+  let model = this.subject();
+  // let store = this.store();
   assert.ok(!!model);
 });

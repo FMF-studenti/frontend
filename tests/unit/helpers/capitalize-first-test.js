@@ -5,6 +5,6 @@ module('Unit | Helper | capitalize first');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = capitalizeFirst(42);
+  let result = capitalizeFirst(42);
   assert.ok(result);
 });

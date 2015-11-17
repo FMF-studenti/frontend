@@ -6,7 +6,7 @@ moduleForModel('external-link', 'Unit | Model | external link', {
 });
 
 test('it exists', function(assert) {
-  var model = this.subject();
-  // var store = this.store();
+  let model = this.subject();
+  // let store = this.store();
   assert.ok(!!model);
 });

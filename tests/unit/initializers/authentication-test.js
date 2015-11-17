@@ -1,10 +1,10 @@
 import Ember from 'ember';
-import SettingsInitializer from '../../../initializers/settings';
+import AuthenticationInitializer from '../../../initializers/authentication';
 import { module, test } from 'qunit';
 
 let application;
 
-module('Unit | Initializer | settings', {
+module('Unit | Initializer | authentication', {
   beforeEach() {
     Ember.run(function() {
       application = Ember.Application.create();
@@ -15,7 +15,7 @@ module('Unit | Initializer | settings', {
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  SettingsInitializer.initialize(application);
+  AuthenticationInitializer.initialize(application);
 
   // you would normally confirm the results of the initializer here
   assert.ok(true);

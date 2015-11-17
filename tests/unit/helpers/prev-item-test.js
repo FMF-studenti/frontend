@@ -5,6 +5,6 @@ module('Unit | Helper | prev item');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = prevItem(42);
+  let result = prevItem(42);
   assert.ok(result);
 });

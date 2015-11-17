@@ -12,14 +12,14 @@
     <button class="ui primary labeled icon button" type="submit">
       <i class="save icon"></i> Shrani
     </button>
-    {{#link-to 'izjave.quote' model class="ui button" activeClass="" }}
+    {{#link-to 'quotes.quote' model class="ui button" activeClass="" }}
       Nazaj
     {{/link-to}}
   </form>
 {{else}}
   <p>Urejanje je dovoljeno samo administratorjem.</p>
   <p>
-    {{#link-to 'izjave.quote' model class="ui button" activeClass="" }}
+    {{#link-to 'quotes.quote' model class="ui button" activeClass="" }}
       Nazaj
     {{/link-to}}
   </p>

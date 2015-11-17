@@ -11,7 +11,7 @@
           </p> --}}
           {{#if session.currentUser.administrator }}
             <p>
-              {{#link-to 'izjave.edit' model class="ui primary icon button" activeClass="" }}
+              {{#link-to 'quotes.edit' model class="ui primary icon button" activeClass="" }}
                 <i class="edit icon"></i>
               {{/link-to}}
               <button class="ui red icon button" {{action "deleteQuote" on="click"}}>

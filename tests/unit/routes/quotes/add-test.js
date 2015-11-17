@@ -1,11 +1,11 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:izjave/edit', 'Unit | Route | izjave/edit', {
+moduleFor('route:quotes/add', 'Unit | Route | quotes/add', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  let route = this.subject();
   assert.ok(route);
 });

@@ -1,5 +1,5 @@
 {{#if session.isAuthenticated}}
-  {{#link-to 'izjave.add' class="ui primary labeled icon button" activeClass="" }}
+  {{#link-to 'quotes.add' class="ui primary labeled icon button" activeClass="" }}
     <i class="plus icon"></i> Vnesi novo izjavo
   {{/link-to}}
 {{else}}
@@ -12,7 +12,7 @@
       <div class="content">
         <div class="buttons">
           <p>
-            {{#link-to 'izjave.quote' quote class="ui primary icon button" activeClass="" }}
+            {{#link-to 'quotes.quote' quote class="ui primary icon button" activeClass="" }}
               <i class="linkify icon"></i>
             {{/link-to}}
           </p>

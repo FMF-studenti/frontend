@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       var controller = this.get('controller');
 
       function transitionTo() {
-        controller.transitionToRoute('izjave');
+        controller.transitionToRoute('quotes');
       }
 
       function failure() {

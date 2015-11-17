@@ -24,7 +24,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('authors');
-  this.route('izjave', function() {
+  this.route('quotes', {
+    path: '/izjave'
+  }, function() {
     this.route('add');
     this.route('quote', {
       path: ':quote_id'

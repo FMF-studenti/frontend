@@ -25,7 +25,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       var item = this.get('controller.model');
 
       function transitionTo() {
-        controller.transitionToRoute('izjave.quote', item);
+        controller.transitionToRoute('quotes.quote', item);
       }
 
       function failure() {

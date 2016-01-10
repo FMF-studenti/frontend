@@ -5,5 +5,6 @@ export default DS.Model.extend({
   username: DS.attr('string'),
   avatar: DS.attr('string'),
   messages: DS.attr('number'),
-  administrator: DS.attr('boolean')
+  administrator: DS.attr('boolean'),
+  error: DS.attr('boolean')
 });

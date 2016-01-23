@@ -3,6 +3,7 @@ import EmberUploader from 'ember-uploader';
 import ENV from 'fmf/config/environment';
 
 export default EmberUploader.FileField.extend({
+  session: Ember.inject.service('session'),
   url: ENV.APP.backendUri + '/api/notes/files',
 
   supportedTypes: [
@@ -20,7 +21,38 @@ export default EmberUploader.FileField.extend({
     var progressBar = Ember.$('#notes-upload-progress');
 
     var uploader = EmberUploader.Uploader.create({
-      url: uploadUrl
+      url: uploadUrl,
+      session: this.get('session'),
+
+      ajaxSettings: function(url, params, method) {
+        var self = this;
+        var settings = {
+          url: url,
+          type: method || 'POST',
+          contentType: false,
+          processData: false,
+          xhr: function() {
+            var xhr = Ember.$.ajaxSettings.xhr();
+            xhr.upload.onprogress = function(e) {
+              self.didProgress(e);
+            };
+            self.one('isAborting', function() {
+              xhr.abort();
+            });
+            return xhr;
+          },
+          data: params
+        };
+
+        this.get('session').authorize('authorizer:oauth2', (headerName, headerValue) => {
+          const headers = {};
+          headers[headerName] = headerValue;
+
+          settings.headers = headers;
+        });
+
+        return settings;
+      }
     });
 
     var validType = this.get('supportedTypes').indexOf(files[0].type) !== -1;

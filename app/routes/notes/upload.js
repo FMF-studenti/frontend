@@ -1,12 +1,6 @@
 import Ember from 'ember';
+import SessionLoginStay from 'fmf/mixins/session-login-stay';
 
-export default Ember.Route.extend({
-  titleToken: 'Naloži',
-
-  actions: {
-    uploadCompleted: function(data) {
-      var name = data['file']['name'];
-      this.get('controller').transitionTo('notes.register-file', Number(name.substring(0, name.length - 4)));
-    }
-  }
+export default Ember.Route.extend(SessionLoginStay, {
+  titleToken: 'Naloži'
 });

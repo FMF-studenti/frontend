@@ -21,6 +21,9 @@ module.exports = function(environment) {
 
     APP: {
       authKey: process.env.AUTH_KEY,
+      authTokenEndpoint: process.env.BACKEND_URI + '/auth/token/',
+      authTokenRevocationEndpoint: process.env.BACKEND_URI + '/auth/revoke_token/',
+      authExtraEndpoint: process.env.BACKEND_URI + '/auth/forum_logout/',
       backendUri: process.env.BACKEND_URI
     },
 
@@ -41,15 +44,8 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:oauth2-bearer',
-    crossOriginWhitelist: [process.env.BACKEND_URI]
-  };
-
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: process.env.BACKEND_URI + '/auth/token/',
-    serverTokenRevocationEndpoint: process.env.BACKEND_URI + '/auth/revoke_token/',
-    serverExtraEndpoint: process.env.BACKEND_URI + '/auth/forum_logout/'
+
   };
 
   ENV.torii = {

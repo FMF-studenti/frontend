@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import moment from 'moment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
@@ -16,16 +16,5 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
   model: function() {
     return this.store.findAll('externalLink');
-  },
-
-  actions: {
-    authenticate: function(provider) {
-      this.get('session').authenticate('authenticator:torii-oauth2', {
-        torii: this.get('torii'),
-        provider: provider
-      }, function(error) {
-        alert('There was an error when trying to sign you in: ' + error);
-      });
-    }
   }
 });

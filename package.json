@@ -37,9 +37,6 @@
     "ember-cli-moment-shim": "0.6.2",
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.8",
-    "ember-cli-simple-auth": "^0.8.0",
-    "ember-cli-simple-auth-oauth2": "^0.8.0",
-    "ember-cli-simple-auth-torii": "^0.8.0",
     "ember-cli-sri": "^1.2.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-cli-uploader": "^0.3.9",
@@ -50,6 +47,8 @@
     "ember-legacy-views": "^0.2.0",
     "ember-metrics": "^0.5.1",
     "ember-moment": "^6.0.0",
-    "semantic-ui-ember": "git://github.com/semantic-org/Semantic-UI-Ember.git#5e7fd4a52612722bc78ef2c4bc2de42367b7a4f1"
+    "ember-simple-auth": "^1.0.1",
+    "semantic-ui-ember": "git://github.com/semantic-org/Semantic-UI-Ember.git#5e7fd4a52612722bc78ef2c4bc2de42367b7a4f1",
+    "torii": "^0.6.1"
   }
 }

@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import SessionLoginStay from 'fmf/mixins/session-login-stay';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(SessionLoginStay, {
   titleToken: 'Avtorji',
   model: function() {
     return this.store.findAll('author');

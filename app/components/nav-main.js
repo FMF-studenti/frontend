@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['ui', 'primary', 'fixed', 'inverted', 'borderless', 'main', 'menu'],
+  session: Ember.inject.service('session'),
   prepareSidebar: function() {
     Ember.$('body').prepend(this.$());
     Ember.$('.ui.sidebar').sidebar({
@@ -15,11 +16,11 @@ export default Ember.Component.extend({
     });
   }.on('didRender'),
   actions: {
-    authenticate: function(provider) {
-      this.sendAction('action', provider);
+    authenticate: function() {
+      this.sendAction('authenticate');
     },
     invalidateSession: function() {
-      this.get('session').invalidate();
+      this.sendAction('invalidateSession');
     }
   }
 });

@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
-    "ember-cli": "1.13.13",
+    "ember-cli": "1.13.15",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-autoprefixer": "^0.4.1",
     "ember-cli-babel": "^5.1.5",
@@ -46,10 +46,10 @@
     "ember-data": "1.13.15",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-infinity": "^0.1.1",
+    "ember-infinity": "^0.2.1",
     "ember-legacy-views": "^0.2.0",
     "ember-metrics": "^0.5.1",
-    "ember-moment": "^4.0.1",
+    "ember-moment": "^6.0.0",
     "semantic-ui-ember": "git://github.com/semantic-org/Semantic-UI-Ember.git#5e7fd4a52612722bc78ef2c4bc2de42367b7a4f1"
   }
 }

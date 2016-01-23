@@ -7,7 +7,17 @@ var options = {
   loaderExclusions: [],
   enableCoverage: true,
   cliOptions: {
-    reporters: ['lcov'],
+    jsonOptions: {
+      outputFile: 'coverage/coverage.json'
+    },
+    lcovOptions: {
+      outputFile: 'coverage/lcov.info',
+      //provide a function to rename es6 modules to a file path
+      renamer: function(moduleName) {
+        return moduleName.replace('fmf', 'app') + '.js';
+      }
+    },
+    reporters: ['lcov', 'json'],
     autostart: true
   }
 };

@@ -6,14 +6,14 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       topics: this.store.findAll('topic'),
       articles: this.store.findAll('blogArticle'),
-      notes: this.store.find('notes/note', {
+      notes: this.store.query('notes/note', {
         'page_size': 6
       }),
       quotes: Ember.$.getJSON(ENV.APP.backendUri + '/api/quotes/latest_and_random').then(function(response) {
         response.quotes[1]['random'] = true;
         return response.quotes;
       }),
-      links: this.store.all('externalLink')
+      links: this.store.findAll('externalLink')
     });
   }
 });

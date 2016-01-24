@@ -1,8 +1,10 @@
-import { moduleFor, test } from 'ember-qunit';
+import {
+  moduleFor, test
+}
+from 'ember-qunit';
 
-moduleFor('route:notes/register-file', 'Unit | Route | notes/register file', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+moduleFor('route:notes/register-file', 'Unit | Route | notes/register-file', {
+  needs: ['service:metrics']
 });
 
 test('it exists', function(assert) {

@@ -1,8 +1,10 @@
-import { moduleFor, test } from 'ember-qunit';
+import {
+  moduleFor, test
+}
+from 'ember-qunit';
 
 moduleFor('controller:notes/list/index', 'Unit | Controller | notes/list/index', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['service:metrics']
 });
 
 // Replace this with your real tests.

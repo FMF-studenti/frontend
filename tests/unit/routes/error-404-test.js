@@ -1,8 +1,10 @@
-import { moduleFor, test } from 'ember-qunit';
+import {
+  moduleFor, test
+}
+from 'ember-qunit';
 
-moduleFor('route:error-404', 'Unit | Route | error 404', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+moduleFor('route:error-404', 'Unit | Route | error-404', {
+  needs: ['service:metrics']
 });
 
 test('it exists', function(assert) {

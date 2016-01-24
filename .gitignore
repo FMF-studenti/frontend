@@ -14,5 +14,6 @@
 /connect.lock
 /coverage/*
 /libpeerconnection.log
+/lcov.dat
 npm-debug.log
 testem.log

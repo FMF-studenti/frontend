@@ -1,25 +1,15 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import {
+  moduleForComponent, test
+}
+from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('nav-main', 'Integration | Component | nav main', {
+moduleForComponent('nav-main', 'Integration | Component | nav-main', {
   integration: true
 });
 
 test('it renders', function(assert) {
-  
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
-
-  this.render(hbs`{{nav-main}}`);
+  this.render(hbs `{{nav-main}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:" + EOL +
-  this.render(hbs`
-    {{#nav-main}}
-      template block text
-    {{/nav-main}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

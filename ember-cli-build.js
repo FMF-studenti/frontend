@@ -48,6 +48,9 @@ module.exports = function(defaults) {
   app.import('vendor/errors/500.html', {
     destDir: 'errors/'
   });
+  app.import('vendor/errors/502.html', {
+    destDir: 'errors/'
+  });
 
   return app.toTree();
 };

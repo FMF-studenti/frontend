@@ -23,6 +23,7 @@
 /* Colors */
 @primaryColor        : @blue;
 @secondaryColor      : @black;
+@positiveColor       : @primaryColor;
 
 @lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightBlack;

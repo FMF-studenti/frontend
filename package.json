@@ -49,7 +49,7 @@
     "ember-metrics": "^0.5.1",
     "ember-moment": "^6.0.0",
     "ember-simple-auth": "^1.0.1",
-    "semantic-ui-ember": "git://github.com/semantic-org/Semantic-UI-Ember.git#5e7fd4a52612722bc78ef2c4bc2de42367b7a4f1",
+    "semantic-ui-ember": "^0.9.3",
     "torii": "^0.6.1"
   }
 }

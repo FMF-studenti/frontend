@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
 
   actions: {
     deleteQuote: function() {
-      var controller = this;
+      const controller = this;
 
       function transitionTo() {
         controller.transitionToRoute('quotes');
@@ -16,6 +16,13 @@ export default Ember.Controller.extend({
       }
 
       this.get('model').destroyRecord().then(transitionTo).catch(failure);
+    },
+
+    report: function(id) {
+      let modal = Ember.$('.ui.modal.report-quote');
+      modal.find('input[name=item-number]').val(id);
+      modal.find('.item-number').text('#' + id);
+      modal.modal('show');
     }
   }
 });

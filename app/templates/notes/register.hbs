@@ -2,8 +2,7 @@
 
 {{#if session.isAuthenticated}}
   <p>
-    <strong>Izberi datoteko, ki si jo skeniral/a, in dodaj podrobnosti o njej!</strong>
-    Za vsako datoteko je na voljo predogled. V primeru, da datoteka ni OK, lahko zahtevaš izbris.</p>
+    <strong>Izberi datoteko, ki si jo skeniral/a, in dodaj podrobnosti o njej!</strong> Za vsako datoteko je na voljo predogled. V primeru, da datoteka ni OK, lahko zahtevaš izbris.</p>
 
   <div class="ui list">
     {{#each model as |file|}}
@@ -12,14 +11,12 @@
           {{#link-to 'notes.register-file' file activeClass="" }}
             {{file.name}}
           {{/link-to}}
-          <a href="{{fmf-constant 'url.notes'}}/tmp/{{file.name}}" class="ui primary icon button">
+          <a href="{{fmf-constant 'url.notes'}}/tmp/{{file.name}}" class="ui primary icon button" title="Predogled">
             <i class="unhide icon"></i>
           </a>
-          {{#if session.isAuthenticated}}
-            <button class="ui primary icon button">
-              <i class="warning circle icon"></i>
-            </button>
-          {{/if}}
+          <button class="ui primary icon button" {{action 'report' file.id}} title="Prijavi napako">
+            <i class="warning circle icon"></i>
+          </button>
         </div>
       </div>
 {{else}}
@@ -32,3 +29,5 @@
 {{else}}
   <i>Za vnos novega zapiska se je potrebno prijaviti.</i>
 {{/if}}
+
+{{report-modal type="report-notes-file" title="Prijavi napako za datoteko"}}

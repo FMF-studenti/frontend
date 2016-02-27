@@ -1,0 +1,19 @@
+{{#ui-modal name=type class=type onApprove=(action 'approveModal')}}
+  <i class="close icon"></i>
+  <div class="header">
+    {{title}} <span class="item-number"></span>
+  </div>
+  <div class="content">
+    <div class="ui form">
+      {{input type="hidden" name="item-type" value=type}} {{input type="hidden" name="item-number"}} {{textarea name="item-content"}}
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui deny button">
+      Prekliči
+    </div>
+    <div class="ui positive primary button">
+      Pošlji
+    </div>
+  </div>
+{{/ui-modal}}

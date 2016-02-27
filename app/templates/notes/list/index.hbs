@@ -17,6 +17,13 @@
             </div>
           </div>
           <div class="column">
+            {{#if session.isAuthenticated}}
+              <div class="buttons">
+                <button class="ui primary icon button" {{action 'report' note.id}} title="Prijavi napako">
+                  <i class="warning circle icon"></i>
+                </button>
+              </div>
+            {{/if}}
             <div class="description">
               <p>{{note.description}}</p>
             </div>

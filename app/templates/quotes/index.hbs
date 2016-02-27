@@ -12,17 +12,15 @@
       <div class="content">
         <div class="buttons">
           <p>
-            {{#link-to 'quotes.quote' quote class="ui primary icon button" activeClass="" }}
+            {{#link-to 'quotes.quote' quote class="ui primary icon button" activeClass="" title="Izjava" }}
               <i class="linkify icon"></i>
             {{/link-to}}
+            {{#if session.isAuthenticated}}
+              <button class="ui primary icon button" {{action 'report' quote.id}} title="Prijavi napako">
+                <i class="warning circle icon"></i>
+              </button>
+            {{/if}}
           </p>
-          {{!-- {{#if session.isAuthenticated}}
-          <p>
-            <button class="ui primary icon button">
-              <i class="warning circle icon"></i>
-            </button>
-          </p>
-          {{/if}} --}}
         </div>
         <div class="description">
           <p>{{quote.content}}</p>

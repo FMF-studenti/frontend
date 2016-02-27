@@ -33,6 +33,13 @@ export default Ember.Controller.extend({
       this.set('year', filters.year ? filters.year : null);
       this.set('subject', filters.subject ? filters.subject : null);
       this.set('search', filters.search ? filters.search : null);
+    },
+
+    report: function(id) {
+      let modal = Ember.$('.ui.modal.report-note');
+      modal.find('input[name=item-number]').val(id);
+      modal.find('.item-number').text('#' + id);
+      modal.modal('show');
     }
   }
 });

@@ -4,21 +4,19 @@
     <div class="content">
       <div class="buttons">
         {{#if session.isAuthenticated}}
-          {{!-- <p>
-            <button class="ui primary icon button">
+          <p>
+            <button class="ui primary icon button" {{action 'report' model.id}} title="Prijavi napako">
               <i class="warning circle icon"></i>
             </button>
-          </p> --}}
-          {{#if session.currentUser.administrator }}
-            <p>
-              {{#link-to 'quotes.edit' model class="ui primary icon button" activeClass="" }}
+            {{#if session.currentUser.administrator }}
+              {{#link-to 'quotes.edit' model class="ui primary icon button" activeClass="" title="Uredi" }}
                 <i class="edit icon"></i>
               {{/link-to}}
-              <button class="ui red icon button" {{action "deleteQuote" on="click"}}>
+              <button class="ui red icon button" {{action "deleteQuote"}} title="Izbriši">
                 <i class="delete icon"></i>
               </button>
-            </p>
-          {{/if}}
+            {{/if}}
+          </p>
         {{/if}}
       </div>
       <div class="description">
